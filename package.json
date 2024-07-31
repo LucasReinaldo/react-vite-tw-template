@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "DEV=true vite",
+    "prebuild": "pnpm run translate",
+    "translate": "node ./src/scripts/i18next.config.js",
+    "dev": "pnpm run translate && vite --mode development",
     "build": "tsc -b && vite build",
     "build:preview": "tsc -b && vite build --mode preview",
     "build:staging": "tsc -b && vite build --mode staging",
@@ -19,9 +21,15 @@
   "dependencies": {
     "@tanstack/react-query": "^5.51.16",
     "@tanstack/react-query-devtools": "^5.51.16",
+    "class-variance-authority": "^0.7.0",
+    "globby": "^14.0.2",
+    "i18next": "^23.12.2",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.5.2",
     "ky": "^1.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^15.0.0",
     "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
@@ -34,6 +42,7 @@
     "@typescript-eslint/parser": "^7.17.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.19",
+    "clsx": "^2.1.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
@@ -45,6 +54,7 @@
     "postcss": "^8.4.40",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwind-merge": "^2.4.0",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",

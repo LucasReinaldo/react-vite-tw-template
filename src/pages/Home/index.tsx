@@ -1,8 +1,12 @@
+import { useTranslation } from 'react-i18next';
+
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <section>
-      <h1>Home</h1>
-      <p>Welcome to the home page!</p>
+      <h1>{t('Home.title')}</h1>
+      <p>{t('Home.description')}</p>
     </section>
   );
 }
