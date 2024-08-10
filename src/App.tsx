@@ -1,12 +1,12 @@
 import { RouterProvider } from 'react-router-dom';
-import { SWRConfig } from 'swr';
+import { AppContext } from './contexts/AppContext';
 import router from './routes';
 
 function App() {
   return (
-    <SWRConfig>
+    <AppContext>
       <RouterProvider router={router} />
-    </SWRConfig>
+    </AppContext>
   );
 }
 
