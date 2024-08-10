@@ -31,6 +31,7 @@ module.exports = {
   plugins: ['react-refresh', 'i18next'],
   rules: {
     "import/no-unresolved": "off",
+    "i18next/no-literal-string": "warn",
     '@typescript-eslint/consistent-type-imports': [
       'warn',
       {

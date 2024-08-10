@@ -1,4 +1,5 @@
 import { useUserContext } from '@/contexts/UserContext/useUserContext';
+import { RiRainbowLine } from '@remixicon/react';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
@@ -10,7 +11,10 @@ export default function Home() {
 
   return (
     <section>
-      <h1>{t('Home.title')}</h1>
+      <div className="inline-flex items-center justify-center gap-2">
+        <h1 className="text-2xl">{t('Home.title')}</h1>
+        <RiRainbowLine />
+      </div>
       <p>{t('Home.description')}</p>
     </section>
   );
