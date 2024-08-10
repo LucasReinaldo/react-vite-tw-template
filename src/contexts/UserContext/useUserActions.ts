@@ -1,8 +1,8 @@
 import { useDefinedContext } from '@/hooks/useDefinedContext';
 import { UserContext } from './UserContext';
 
-function useUserContext() {
-  return useDefinedContext(UserContext);
+function useUserActions() {
+  return useDefinedContext(UserContext).actions;
 }
 
-export { useUserContext };
+export { useUserActions };
