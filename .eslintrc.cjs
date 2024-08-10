@@ -30,6 +30,7 @@ module.exports = {
   },
   plugins: ['react-refresh', 'i18next'],
   rules: {
+    "import/no-unresolved": "off",
     '@typescript-eslint/consistent-type-imports': [
       'warn',
       {
