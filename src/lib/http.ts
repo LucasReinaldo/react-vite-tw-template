@@ -1,7 +1,7 @@
 import ky from 'ky';
 
 const http = ky.create({
-  prefixUrl: 'https://api.example.com',
+  prefixUrl: 'https://pokeapi.co/api/v2/',
   timeout: 10000,
   hooks: {
     beforeRequest: [

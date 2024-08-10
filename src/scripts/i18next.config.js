@@ -16,7 +16,7 @@ const LANGUAGES = ['en'];
  * Merge locale files into a single translation.json file for each language
  * @type {() => Promise<void>}
  */
-const mergeLocaleFiles = async () => {
+async function mergeLocaleFiles() {
   await rm(LOCALES_DIR, { recursive: true, force: true });
 
   await Promise.all(
@@ -33,10 +33,11 @@ const mergeLocaleFiles = async () => {
       console.info(`Found files for language ${language}:`, files.length);
 
       // Initialize an empty object to store merged translations
+      /** @type {Record<string, Record<string, string>>} */
       const mergedTranslations = {};
 
       // Read each file and merge its content
-      await Promise.all(
+      await Promise.allSettled(
         files.map(async (file) => {
           try {
             const componentName = basename(
@@ -61,6 +62,6 @@ const mergeLocaleFiles = async () => {
       console.info(`Merged translations written to: ${outputPath}`);
     }),
   );
-};
+}
 
 (async () => mergeLocaleFiles())();
