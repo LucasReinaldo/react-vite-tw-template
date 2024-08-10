@@ -1,4 +1,5 @@
-import { User } from './types';
+import { useMemo } from 'react';
+import type { User } from './types';
 import { UserContext } from './UserContext';
 import { UserContextActions } from './UserContextActions';
 
@@ -9,10 +10,8 @@ interface UserProviderProps {
 export function UserProvider(props: UserProviderProps) {
   const { children } = props;
 
-  const user: User = { name: 'John Doe' };
-
-  const actions = {};
-  const store = { user };
+  const actions = useMemo(() => ({}), []);
+  const store = useMemo(() => ({ user: { name: 'John Doe' } as User }), []);
 
   return (
     <UserContextActions.Provider value={actions}>
