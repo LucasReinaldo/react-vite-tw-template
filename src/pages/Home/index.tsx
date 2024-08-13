@@ -1,13 +1,8 @@
-import { useUser } from '@/contexts/UserContext/useUser';
 import { RiRainbowLine } from '@remixicon/react';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const { t } = useTranslation();
-
-  const { user } = useUser();
-
-  console.log('user', user);
 
   return (
     <section>

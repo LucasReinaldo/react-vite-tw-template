@@ -30,8 +30,9 @@ module.exports = {
   },
   plugins: ['react-refresh', 'i18next'],
   rules: {
-    "import/no-unresolved": "off",
-    "i18next/no-literal-string": "warn",
+    '@typescript-eslint/method-signature-style': ['error', 'property'],
+    'import/no-unresolved': 'off',
+    'i18next/no-literal-string': 'warn',
     '@typescript-eslint/consistent-type-imports': [
       'warn',
       {
@@ -46,7 +47,7 @@ module.exports = {
     ],
     'react/prop-types': 'off',
     'no-unused-vars': [
-      'error',
+      'warn',
       {
         vars: 'all',
         args: 'after-used',
@@ -55,5 +56,15 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
+    'sort-imports': [
+      'warn',
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+        allowSeparatedGroups: false,
+      },
+    ],
   },
 };
